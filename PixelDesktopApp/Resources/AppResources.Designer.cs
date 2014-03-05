@@ -79,7 +79,7 @@ namespace PixelDesktopApp.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Pixel Desktop.
+        ///   Looks up a localized string similar to Desktop Sticker.
         /// </summary>
         public static string ApplicationTitle {
             get {
