@@ -92,9 +92,25 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Common\PartType.cs" />
+    <Compile Include="Common\BackgroundHelper.cs" />
+    <Compile Include="Common\BackgroundManager.cs" />
+    <Compile Include="Common\ImagePart.cs" />
+    <Compile Include="Common\ImagePartManager.cs" />
+    <Compile Include="Common\ImageUrlServices.cs" />
     <Compile Include="DataAccess\ItemRepository.cs" />
+    <Compile Include="Enum\BackgroundType.cs" />
+    <Compile Include="Enum\ImagePartType.cs" />
     <Compile Include="LocalizedStrings.cs" />
+    <Compile Include="Models\background\BackgroundDark.cs" />
+    <Compile Include="Models\background\BackgroundLight.cs" />
+    <Compile Include="Models\background\IBackground.cs" />
+    <Compile Include="Models\ImageUrl\IImagePart.cs" />
+    <Compile Include="Models\ImageUrl\ImagePartAB.cs" />
+    <Compile Include="Models\ImageUrl\ImagePartAb4.cs" />
+    <Compile Include="Models\ImageUrl\ImagePartABC.cs" />
+    <Compile Include="Models\ImageUrl\ImagePartABc4.cs" />
+    <Compile Include="Models\ImageUrl\ImagePartABCd4.cs" />
+    <Compile Include="Models\ImageUrl\ImagePartSeven.cs" />
     <Compile Include="Models\Item.cs" />
     <Compile Include="ViewModels\DefaultItemListViewModel.cs" />
     <Compile Include="ViewModels\ItemListViewModelBase.cs" />
@@ -139,6 +155,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AppResLib.dll.0804.mui" />
+    <Content Include="Libs\Microsoft.Phone.Controls.Toolkit.dll" />
     <None Include="Properties\AppManifest.xml" />
     <None Include="Properties\WMAppManifest.xml">
       <SubType>Designer</SubType>
@@ -232,23 +249,23 @@
     <Content Include="Images\part\white\63.png" />
     <Content Include="Images\part\white\71.png" />
     <Content Include="Images\part\white\72.png" />
-    <Content Include="Images\thumbnail\black\1.png" />
-    <Content Include="Images\thumbnail\black\2.png" />
-    <Content Include="Images\thumbnail\black\3.png" />
-    <Content Include="Images\thumbnail\black\4.png" />
-    <Content Include="Images\thumbnail\black\5.png" />
-    <Content Include="Images\thumbnail\black\6.png" />
-    <Content Include="Images\thumbnail\black\7.png" />
-    <Content Include="Images\thumbnail\black\8.png" />
-    <Content Include="Images\thumbnail\white\1.png" />
-    <Content Include="Images\thumbnail\white\2.png" />
-    <Content Include="Images\thumbnail\white\3.png" />
-    <Content Include="Images\thumbnail\white\4.png" />
-    <Content Include="Images\thumbnail\white\5.png" />
-    <Content Include="Images\thumbnail\white\6.png" />
-    <Content Include="Images\thumbnail\white\7.png" />
-    <Content Include="Images\thumbnail\white\8.png" />
-    <Content Include="Images\thumbnail\white\9.png" />
+    <Content Include="Images\thumbnail\Dark\1.png" />
+    <Content Include="Images\thumbnail\Dark\2.png" />
+    <Content Include="Images\thumbnail\Dark\3.png" />
+    <Content Include="Images\thumbnail\Dark\4.png" />
+    <Content Include="Images\thumbnail\Dark\5.png" />
+    <Content Include="Images\thumbnail\Dark\6.png" />
+    <Content Include="Images\thumbnail\Dark\7.png" />
+    <Content Include="Images\thumbnail\Dark\8.png" />
+    <Content Include="Images\thumbnail\Light\1.png" />
+    <Content Include="Images\thumbnail\Light\2.png" />
+    <Content Include="Images\thumbnail\Light\3.png" />
+    <Content Include="Images\thumbnail\Light\4.png" />
+    <Content Include="Images\thumbnail\Light\5.png" />
+    <Content Include="Images\thumbnail\Light\6.png" />
+    <Content Include="Images\thumbnail\Light\7.png" />
+    <Content Include="Images\thumbnail\Light\8.png" />
+    <Content Include="Images\thumbnail\Light\9.png" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\AppResources.resx">
@@ -257,7 +274,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\AppResources.zh-CN.resx" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Reference Include="Microsoft.Phone.Controls.Toolkit, Version=8.0.1.0, Culture=neutral, PublicKeyToken=b772ad94eb9ca604, processorArchitecture=MSIL" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

@@ -88,6 +88,24 @@ namespace PixelDesktopApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Are you sure?.
+        /// </summary>
+        public static string ExitConfirmMsg {
+            get {
+                return ResourceManager.GetString("ExitConfirmMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Exit.
+        /// </summary>
+        public static string ExitText {
+            get {
+                return ResourceManager.GetString("ExitText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Default.
         /// </summary>
         public static string Pivot1Title {
@@ -102,6 +120,15 @@ namespace PixelDesktopApp.Resources {
         public static string Pivot2Title {
             get {
                 return ResourceManager.GetString("Pivot2Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to About.
+        /// </summary>
+        public static string Pivot3Title {
+            get {
+                return ResourceManager.GetString("Pivot3Title", resourceCulture);
             }
         }
         

@@ -10,6 +10,7 @@ using Microsoft.Phone.Shell;
 using PixelDesktopApp.Resources;
 using PixelDesktopApp.Views;
 using PixelDesktopApp.ViewModels;
+using System.Diagnostics;
 
 namespace PixelDesktopApp
 {
@@ -22,7 +23,7 @@ namespace PixelDesktopApp
 
             // Set the data context of the listbox control to the sample data
             // DataContext = new MainViewModel();
-
+            this.PivotDefault.DataContext = new DefaultItemListViewModel();
             //BuildLocalizedApplicationBar();
         }
 
@@ -53,6 +54,35 @@ namespace PixelDesktopApp
         private void Button3_Click(object sender, RoutedEventArgs e)
         {
             Pin(3);
+        }
+
+        protected override void OnBackKeyPress(System.ComponentModel.CancelEventArgs e)
+        {
+            if (MessageBox.Show(AppResources.ExitConfirmMsg, AppResources.ExitText, MessageBoxButton.OKCancel) == MessageBoxResult.OK)
+            {
+                this.ClearBackEntries();
+            }
+            else
+            {
+                e.Cancel = true;
+            }
+        }
+
+        private void ClearBackEntries()
+        {
+            while (NavigationService.BackStack != null & NavigationService.BackStack.Count() > 0)
+            {
+                NavigationService.RemoveBackEntry();
+            }
+        }
+
+        private void Image_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            // /Images/thumbnail/Dark/1.png
+            var url = (string)((Image)sender).DataContext;
+            var result = url.Split(new char[] { '/' });
+            var number = result[result.Length - 1].Split(new char[] { '.' })[0];
+            // Debug.WriteLine(id);
         }
     }
 }

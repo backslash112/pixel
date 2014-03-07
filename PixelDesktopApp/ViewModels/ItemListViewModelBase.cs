@@ -11,22 +11,22 @@ namespace PixelDesktopApp.ViewModels
 {
     public class ItemListViewModelBase : ViewModelBase
     {
-        private ObservableCollection<Item> _items;
+        private ObservableCollection<string> _thumbnail;
         ItemRepository _deskRepository;
         public ItemListViewModelBase()
         {
-            _items = LoadItems();
+            _thumbnail = LoadThumbnail();
             _deskRepository = new ItemRepository();
         }
 
-        protected virtual ObservableCollection<Item> LoadItems()
+        protected virtual ObservableCollection<string> LoadThumbnail()
         {
             return null;
         }
 
-        public ObservableCollection<Item> Items
+        public ObservableCollection<string> Thumbnail
         {
-            get { return _items; }
+            get { return _thumbnail; }
         }
     }
 }

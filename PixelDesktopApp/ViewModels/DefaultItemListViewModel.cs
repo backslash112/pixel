@@ -1,4 +1,5 @@
-﻿using PixelDesktopApp.Models;
+﻿using PixelDesktopApp.Common;
+using PixelDesktopApp.Models;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -10,9 +11,10 @@ namespace PixelDesktopApp.ViewModels
 {
     public class DefaultItemListViewModel : ItemListViewModelBase
     {
-        protected override ObservableCollection<Item> LoadItems()
+        protected override ObservableCollection<string> LoadThumbnail()
         {
-            return base.LoadItems();
+            ImageUrlServices services = new ImageUrlServices();
+            return new ObservableCollection<string>(services.ThumbnailList);
         }
     }
 }

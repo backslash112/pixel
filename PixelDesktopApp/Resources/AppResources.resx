@@ -143,4 +143,13 @@
   <data name="Pivot2Title" xml:space="preserve">
     <value>Custom</value>
   </data>
+  <data name="ExitConfirmMsg" xml:space="preserve">
+    <value>Are you sure?</value>
+  </data>
+  <data name="ExitText" xml:space="preserve">
+    <value>Exit</value>
+  </data>
+  <data name="Pivot3Title" xml:space="preserve">
+    <value>About</value>
+  </data>
 </root>
