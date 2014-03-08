@@ -168,12 +168,15 @@
     <value>外星人</value>
   </data>
   <data name="DefaultImageName6" xml:space="preserve">
-    <value />
+    <value>小蘑菇</value>
   </data>
   <data name="DefaultImageName7" xml:space="preserve">
-    <value />
+    <value>鹿尤君</value>
   </data>
   <data name="DefaultImageName8" xml:space="preserve">
-    <value />
+    <value>色块画</value>
+  </data>
+  <data name="DefaultImageName9" xml:space="preserve">
+    <value>相扑君</value>
   </data>
 </root>

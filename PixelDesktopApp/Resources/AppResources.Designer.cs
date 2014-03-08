@@ -160,6 +160,15 @@ namespace PixelDesktopApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 相扑君.
+        /// </summary>
+        public static string DefaultImageName9 {
+            get {
+                return ResourceManager.GetString("DefaultImageName9", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Are you sure?.
         /// </summary>
         public static string ExitConfirmMsg {
