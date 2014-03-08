@@ -94,12 +94,14 @@
     </Compile>
     <Compile Include="Common\BackgroundHelper.cs" />
     <Compile Include="Common\BackgroundManager.cs" />
+    <Compile Include="Common\FlipTileDataManager.cs" />
     <Compile Include="Common\ImagePart.cs" />
     <Compile Include="Common\ImagePartManager.cs" />
     <Compile Include="Common\ImageUrlServices.cs" />
     <Compile Include="DataAccess\ItemRepository.cs" />
     <Compile Include="Enum\BackgroundType.cs" />
     <Compile Include="Enum\ImagePartType.cs" />
+    <Compile Include="Enum\ImageSize.cs" />
     <Compile Include="LocalizedStrings.cs" />
     <Compile Include="Models\Background\BackgroundDark.cs" />
     <Compile Include="Models\Background\BackgroundLight.cs" />
@@ -118,7 +120,6 @@
     <Compile Include="ViewModels\ItemViewModel.cs" />
     <Compile Include="ViewModels\RelayCommand.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
-    <Compile Include="FlipTileDataManager.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>

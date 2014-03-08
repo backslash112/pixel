@@ -10,6 +10,8 @@ using Microsoft.Phone.Shell;
 using PixelDesktopApp.ViewModels;
 using PixelDesktopApp.Common;
 using System.Windows.Media;
+using System.Diagnostics;
+using PixelDesktopApp.Models;
 
 namespace PixelDesktopApp.Views
 {
@@ -30,6 +32,22 @@ namespace PixelDesktopApp.Views
                 LayoutRoot.Background = new SolidColorBrush(Colors.White);
                 title.Foreground = new SolidColorBrush(Colors.Black);
             }
+
+            PinUserControl.Pin += PinImage;
+        }
+
+        private void PinImage(ImageModel image)
+        {
+            ShellTile tile = ShellTile.ActiveTiles.FirstOrDefault(x => x.NavigationUri.ToString().Contains(image.url));
+            if (tile != null && tile.NavigationUri.ToString().Contains(image.id.ToString()))
+            {
+                MessageBox.Show("successfully update.");
+            }
+            else
+            {
+                ShellTileData tileData = FlipTileDataManager.Create(image);
+                ShellTile.Create(new Uri("/MainPage.xaml?imageId=" + image.id, UriKind.Relative), tileData, true);
+            }
         }
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
@@ -38,6 +56,11 @@ namespace PixelDesktopApp.Views
             {
                 DataContext = new ItemViewModel(int.Parse(number));
             }
+        }
+
+        protected override void OnBackKeyPress(System.ComponentModel.CancelEventArgs e)
+        {
+            PinUserControl.Pin -= PinImage;
         }
 
         public static event Action PreviewHold;

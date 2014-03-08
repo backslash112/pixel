@@ -97,7 +97,7 @@ namespace PixelDesktopApp.DataAccess
                 tempImage.id = int.Parse((item.Attribute("id").Value));
                 tempImage.number = int.Parse((item.Attribute("number").Value));
                 tempImage.url = item.Attribute("url").Value;
-
+                tempImage.Size = (ImageSize)Enum.Parse(typeof(ImageSize), item.Attribute("size").Value);
                 result.Add(tempImage);
             }
             return result;
