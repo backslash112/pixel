@@ -16,7 +16,7 @@ namespace PixelDesktopApp.ViewModels
         public ItemListViewModelBase()
         {
             _thumbnail = LoadThumbnail();
-            _deskRepository = new ItemRepository();
+            _deskRepository = ItemRepository.Instance;
         }
 
         protected virtual ObservableCollection<string> LoadThumbnail()

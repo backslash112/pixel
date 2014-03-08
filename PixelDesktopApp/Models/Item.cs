@@ -1,4 +1,6 @@
-﻿using System;
+﻿using PixelDesktopApp.Common;
+using PixelDesktopApp.Resources;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,47 +10,86 @@ namespace PixelDesktopApp.Models
 {
     public class Item
     {
-        private int _id;
-        private string _name;
-        private string _imageSmall;
-        private string _imagePart1;
-        private string _imagePart2;
-        private string _imagePart3;
+        private int _number;
+        private List<ImageModel> _images;
 
-        public int Id
+        public List<ImageModel> Images
         {
-            get { return _id; }
-            set { _id = value; }
+            get { return _images; }
+            set { _images = value; }
+        }
+
+        public string TypeString
+        {
+            get { return _type.ToString(); }
+        }
+        private ImagePartType _type;
+
+        public ImagePartType Type
+        {
+            get { return _type; }
+            set { _type = value; }
+        }
+        public Item()
+        {
+
+        }
+        public Item(int number)
+        {
+            _number = number;
+
+        }
+        public int Number
+        {
+            get { return _number; }
+            set { _number = value; }
         }
 
         public string Name
         {
-            get { return _name; }
-            set { _name = value; }
+            get
+            {
+                return GetNameByNumber();
+            }
         }
 
-        public string ImageSmall
+        private string GetNameByNumber()
         {
-            get { return _imageSmall; }
-            set { _imageSmall = value; }
+            if (_number == 1)
+            {
+                return AppResources.DefaultImageName1;
+            }
+            else if (_number == 2)
+            {
+                return AppResources.DefaultImageName2;
+            }
+            else if (_number == 3)
+            {
+                return AppResources.DefaultImageName3;
+            }
+            else if (_number == 4)
+            {
+                return AppResources.DefaultImageName4;
+            }
+            else if (_number == 5)
+            {
+                return AppResources.DefaultImageName5;
+            }
+            else if (_number == 6)
+            {
+                return AppResources.DefaultImageName6;
+            }
+            else if (_number == 7)
+            {
+                return AppResources.DefaultImageName7;
+            }
+            else if (_number == 8)
+            {
+                return AppResources.DefaultImageName8;
+            }
+            return string.Empty;
         }
 
-        public string ImagePart1
-        {
-            get { return _imagePart1; }
-            set { _imagePart1 = value; }
-        }
 
-        public string ImagePart2
-        {
-            get { return _imagePart2; }
-            set { _imagePart2 = value; }
-        }
-
-        public string ImagePart3
-        {
-            get { return _imagePart3; }
-            set { _imagePart3 = value; }
-        }
     }
 }

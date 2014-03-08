@@ -11,6 +11,9 @@ using PixelDesktopApp.Resources;
 using PixelDesktopApp.Views;
 using PixelDesktopApp.ViewModels;
 using System.Diagnostics;
+using System.Threading;
+using PixelDesktopApp.DataAccess;
+using PixelDesktopApp.Common;
 
 namespace PixelDesktopApp
 {
@@ -21,10 +24,13 @@ namespace PixelDesktopApp
         {
             InitializeComponent();
 
-            // Set the data context of the listbox control to the sample data
-            // DataContext = new MainViewModel();
             this.PivotDefault.DataContext = new DefaultItemListViewModel();
-            //BuildLocalizedApplicationBar();
+            Loaded += (s, e) =>
+            {
+                ItemRepository repository = ItemRepository.Instance;
+                repository.Type = BackgroundHelper.GetBackgroundType();
+                repository.Init();
+            };
         }
 
         private void Pin(int i)
@@ -82,7 +88,7 @@ namespace PixelDesktopApp
             var url = (string)((Image)sender).DataContext;
             var result = url.Split(new char[] { '/' });
             var number = result[result.Length - 1].Split(new char[] { '.' })[0];
-            // Debug.WriteLine(id);
+            NavigationService.Navigate(new Uri("/Views/ItemPage.xaml?number=" + number, UriKind.Relative));
         }
     }
 }

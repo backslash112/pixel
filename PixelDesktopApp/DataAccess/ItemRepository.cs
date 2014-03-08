@@ -1,10 +1,13 @@
-﻿using PixelDesktopApp.Models;
+﻿using PixelDesktopApp.Common;
+using PixelDesktopApp.Models;
 using System;
 using System.Collections.Generic;
 using System.IO.IsolatedStorage;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Xml;
 using System.Xml.Linq;
 
@@ -12,11 +15,28 @@ namespace PixelDesktopApp.DataAccess
 {
     public class ItemRepository
     {
-        readonly List<Item> _items;
+        List<Item> _items;
+        public BackgroundType Type { get; set; }
 
-        public ItemRepository()
+        private static ItemRepository _instance;
+        public static ItemRepository Instance
         {
-            _items = LoadItems();
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new ItemRepository();
+                }
+                return _instance;
+            }
+        }
+        private ItemRepository()
+        {
+
+        }
+        public void Init()
+        {
+            _items = LoadItems(Type);
         }
 
         public List<Item> GetItems()
@@ -24,34 +44,68 @@ namespace PixelDesktopApp.DataAccess
             return new List<Item>(_items);
         }
 
-        static List<Item> LoadItems()
+        private static List<ImageModel> _images;
+        static List<Item> LoadItems(BackgroundType type)
         {
+            LoadImages(type);
+
             List<Item> result = new List<Item>();
-            IsolatedStorageFile fileStorage = IsolatedStorageFile.GetUserStoreForApplication();
 
-            if (!fileStorage.FileExists("Items.xml"))
-                return result;
-
-            using (var isoFileStream = new IsolatedStorageFileStream("Items.xml", System.IO.FileMode.Open, fileStorage))
+            XDocument xml = XDocument.Load("Data/items.xml");
+            foreach (var item in xml.Element("items").Elements("item"))
             {
-                using (XmlReader reader = XmlReader.Create(isoFileStream))
+                var tempDesk = new Item();
+                tempDesk.Number = int.Parse((item.Attribute("number").Value));
+                var images = _images.Where(i => i.number == tempDesk.Number);
+                if (images.Any())
                 {
-                    XDocument xml = XDocument.Load(reader);
-                    foreach (var item in xml.Element("items").Elements("item"))
-                    {
-                        var tempDesk = new Item();
-                        tempDesk.Id = int.Parse((item.Element("Id").Value));
-                        tempDesk.Name = item.Element("Name").ToString();
-                        tempDesk.ImageSmall = item.Element("ImageSmall").ToString();
-                        tempDesk.ImagePart1 = item.Element("ImagePart1").ToString();
-                        tempDesk.ImagePart2 = item.Element("ImagePart2").ToString();
-                        tempDesk.ImagePart3 = item.Element("ImagePart3").ToString();
-
-                        result.Add(tempDesk);
-                    }
+                    tempDesk.Images = images.ToList();
                 }
+                tempDesk.Type = (ImagePartType)Enum.Parse(typeof(ImagePartType), item.Attribute("type").Value);
+
+                result.Add(tempDesk);
+
             }
             return result;
+        }
+
+        private static void LoadImages(BackgroundType type)
+        {
+            switch (type)
+            {
+                case BackgroundType.Light:
+
+                    _images = GetImagesXmlData("Data/lightImages.xml");
+                    break;
+
+                case BackgroundType.Dark:
+
+                    _images = GetImagesXmlData("Data/darkImages.xml");
+                    break;
+            }
+        }
+
+        private static List<ImageModel> GetImagesXmlData(string file)
+        {
+            List<ImageModel> result = new List<ImageModel>();
+            IsolatedStorageFile fileStorage = IsolatedStorageFile.GetUserStoreForApplication();
+
+            XDocument xml = XDocument.Load(file);
+            foreach (var item in xml.Element("images").Elements("image"))
+            {
+                var tempImage = new ImageModel();
+                tempImage.id = int.Parse((item.Attribute("id").Value));
+                tempImage.number = int.Parse((item.Attribute("number").Value));
+                tempImage.url = item.Attribute("url").Value;
+
+                result.Add(tempImage);
+            }
+            return result;
+        }
+
+        internal Item GetItemByNumber(int number)
+        {
+            return _items.First(i => i.Number == number);
         }
     }
 }

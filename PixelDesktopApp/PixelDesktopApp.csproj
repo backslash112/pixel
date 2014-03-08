@@ -101,9 +101,10 @@
     <Compile Include="Enum\BackgroundType.cs" />
     <Compile Include="Enum\ImagePartType.cs" />
     <Compile Include="LocalizedStrings.cs" />
-    <Compile Include="Models\background\BackgroundDark.cs" />
-    <Compile Include="Models\background\BackgroundLight.cs" />
-    <Compile Include="Models\background\IBackground.cs" />
+    <Compile Include="Models\Background\BackgroundDark.cs" />
+    <Compile Include="Models\Background\BackgroundLight.cs" />
+    <Compile Include="Models\Background\IBackground.cs" />
+    <Compile Include="Models\ImageModel.cs" />
     <Compile Include="Models\ImageUrl\IImagePart.cs" />
     <Compile Include="Models\ImageUrl\ImagePartAB.cs" />
     <Compile Include="Models\ImageUrl\ImagePartAb4.cs" />
@@ -131,6 +132,9 @@
     <Compile Include="Views\ItemPage.xaml.cs">
       <DependentUpon>ItemPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\PinUserControl.xaml.cs">
+      <DependentUpon>PinUserControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\TaskListUserControl.xaml.cs">
       <DependentUpon>TaskListUserControl.xaml</DependentUpon>
     </Compile>
@@ -148,6 +152,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\PinUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\TaskListUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -155,6 +163,28 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AppResLib.dll.0804.mui" />
+    <Content Include="Data\lightImages.xml" />
+    <Content Include="Data\darkImages.xml" />
+    <Content Include="Data\items.xml" />
+    <Content Include="Images\icon\basecircle.png" />
+    <Content Include="Images\icon\redeyes.png" />
+    <Content Include="Images\icon\pin.png" />
+    <Content Include="Images\part\dark\81.png" />
+    <Content Include="Images\part\dark\82.png" />
+    <Content Include="Images\part\dark\83.png" />
+    <Content Include="Images\part\light\82.png" />
+    <Content Include="Images\part\light\83.png" />
+    <Content Include="Images\part\light\81.png" />
+    <Content Include="Images\part\light\91.png" />
+    <Content Include="Images\part\light\92.png" />
+    <Content Include="Images\part\light\93.png" />
+    <Content Include="Images\part\light\94.png" />
+    <Content Include="Images\part\light\95.png" />
+    <Content Include="Images\part\light\96.png" />
+    <Content Include="Images\part\light\97.png" />
+    <Content Include="Images\part\light\98.png" />
+    <Content Include="Images\thumbnail\Dark\9.png" />
+    <Content Include="Images\thumbnail\Dark\8.png" />
     <Content Include="Libs\Microsoft.Phone.Controls.Toolkit.dll" />
     <None Include="Properties\AppManifest.xml" />
     <None Include="Properties\WMAppManifest.xml">
@@ -182,73 +212,64 @@
     <Content Include="Assets\Tiles\IconicTileSmall.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\mushroom1.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Images\mushroom2.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Images\mushroom3.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Images\part\black\11.png" />
-    <Content Include="Images\part\black\12.png" />
-    <Content Include="Images\part\black\13.png" />
-    <Content Include="Images\part\black\521.png" />
-    <Content Include="Images\part\black\522.png" />
-    <Content Include="Images\part\black\523.png" />
-    <Content Include="Images\part\black\524.png" />
-    <Content Include="Images\part\black\441.png" />
-    <Content Include="Images\part\black\442.png" />
-    <Content Include="Images\part\black\443.png" />
-    <Content Include="Images\part\black\444.png" />
-    <Content Include="Images\part\black\231.png" />
-    <Content Include="Images\part\black\232.png" />
-    <Content Include="Images\part\black\233.png" />
-    <Content Include="Images\part\black\234.png" />
-    <Content Include="Images\part\black\21.png" />
-    <Content Include="Images\part\black\22.png" />
-    <Content Include="Images\part\black\31.png" />
-    <Content Include="Images\part\black\32.png" />
-    <Content Include="Images\part\black\33.png" />
-    <Content Include="Images\part\black\41.png" />
-    <Content Include="Images\part\black\42.png" />
-    <Content Include="Images\part\black\43.png" />
-    <Content Include="Images\part\black\51.png" />
-    <Content Include="Images\part\black\61.png" />
-    <Content Include="Images\part\black\62.png" />
-    <Content Include="Images\part\black\63.png" />
-    <Content Include="Images\part\black\71.png" />
-    <Content Include="Images\part\black\72.png" />
-    <Content Include="Images\part\white\11.png" />
-    <Content Include="Images\part\white\12.png" />
-    <Content Include="Images\part\white\13.png" />
-    <Content Include="Images\part\white\521.png" />
-    <Content Include="Images\part\white\522.png" />
-    <Content Include="Images\part\white\523.png" />
-    <Content Include="Images\part\white\524.png" />
-    <Content Include="Images\part\white\441.png" />
-    <Content Include="Images\part\white\442.png" />
-    <Content Include="Images\part\white\443.png" />
-    <Content Include="Images\part\white\444.png" />
-    <Content Include="Images\part\white\231.png" />
-    <Content Include="Images\part\white\232.png" />
-    <Content Include="Images\part\white\233.png" />
-    <Content Include="Images\part\white\234.png" />
-    <Content Include="Images\part\white\21.png" />
-    <Content Include="Images\part\white\22.png" />
-    <Content Include="Images\part\white\31.png" />
-    <Content Include="Images\part\white\32.png" />
-    <Content Include="Images\part\white\33.png" />
-    <Content Include="Images\part\white\41.png" />
-    <Content Include="Images\part\white\42.png" />
-    <Content Include="Images\part\white\43.png" />
-    <Content Include="Images\part\white\51.png" />
-    <Content Include="Images\part\white\61.png" />
-    <Content Include="Images\part\white\62.png" />
-    <Content Include="Images\part\white\63.png" />
-    <Content Include="Images\part\white\71.png" />
-    <Content Include="Images\part\white\72.png" />
+    <Content Include="Images\part\dark\11.png" />
+    <Content Include="Images\part\dark\12.png" />
+    <Content Include="Images\part\dark\13.png" />
+    <Content Include="Images\part\dark\521.png" />
+    <Content Include="Images\part\dark\522.png" />
+    <Content Include="Images\part\dark\523.png" />
+    <Content Include="Images\part\dark\524.png" />
+    <Content Include="Images\part\dark\441.png" />
+    <Content Include="Images\part\dark\442.png" />
+    <Content Include="Images\part\dark\443.png" />
+    <Content Include="Images\part\dark\444.png" />
+    <Content Include="Images\part\dark\231.png" />
+    <Content Include="Images\part\dark\232.png" />
+    <Content Include="Images\part\dark\233.png" />
+    <Content Include="Images\part\dark\234.png" />
+    <Content Include="Images\part\dark\21.png" />
+    <Content Include="Images\part\dark\22.png" />
+    <Content Include="Images\part\dark\31.png" />
+    <Content Include="Images\part\dark\32.png" />
+    <Content Include="Images\part\dark\33.png" />
+    <Content Include="Images\part\dark\41.png" />
+    <Content Include="Images\part\dark\42.png" />
+    <Content Include="Images\part\dark\43.png" />
+    <Content Include="Images\part\dark\51.png" />
+    <Content Include="Images\part\dark\61.png" />
+    <Content Include="Images\part\dark\62.png" />
+    <Content Include="Images\part\dark\63.png" />
+    <Content Include="Images\part\dark\71.png" />
+    <Content Include="Images\part\dark\72.png" />
+    <Content Include="Images\part\light\11.png" />
+    <Content Include="Images\part\light\12.png" />
+    <Content Include="Images\part\light\13.png" />
+    <Content Include="Images\part\light\521.png" />
+    <Content Include="Images\part\light\522.png" />
+    <Content Include="Images\part\light\523.png" />
+    <Content Include="Images\part\light\524.png" />
+    <Content Include="Images\part\light\441.png" />
+    <Content Include="Images\part\light\442.png" />
+    <Content Include="Images\part\light\443.png" />
+    <Content Include="Images\part\light\444.png" />
+    <Content Include="Images\part\light\231.png" />
+    <Content Include="Images\part\light\232.png" />
+    <Content Include="Images\part\light\233.png" />
+    <Content Include="Images\part\light\234.png" />
+    <Content Include="Images\part\light\21.png" />
+    <Content Include="Images\part\light\22.png" />
+    <Content Include="Images\part\light\31.png" />
+    <Content Include="Images\part\light\32.png" />
+    <Content Include="Images\part\light\33.png" />
+    <Content Include="Images\part\light\41.png" />
+    <Content Include="Images\part\light\42.png" />
+    <Content Include="Images\part\light\43.png" />
+    <Content Include="Images\part\light\51.png" />
+    <Content Include="Images\part\light\61.png" />
+    <Content Include="Images\part\light\62.png" />
+    <Content Include="Images\part\light\63.png" />
+    <Content Include="Images\part\light\71.png" />
+    <Content Include="Images\part\light\72.png" />
     <Content Include="Images\thumbnail\Dark\1.png" />
     <Content Include="Images\thumbnail\Dark\2.png" />
     <Content Include="Images\thumbnail\Dark\3.png" />
@@ -256,7 +277,6 @@
     <Content Include="Images\thumbnail\Dark\5.png" />
     <Content Include="Images\thumbnail\Dark\6.png" />
     <Content Include="Images\thumbnail\Dark\7.png" />
-    <Content Include="Images\thumbnail\Dark\8.png" />
     <Content Include="Images\thumbnail\Light\1.png" />
     <Content Include="Images\thumbnail\Light\2.png" />
     <Content Include="Images\thumbnail\Light\3.png" />
@@ -275,7 +295,9 @@
     <EmbeddedResource Include="Resources\AppResources.zh-CN.resx" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Expression.Interactions, Version=3.9.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.Phone.Controls.Toolkit, Version=8.0.1.0, Culture=neutral, PublicKeyToken=b772ad94eb9ca604, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Interactivity, Version=3.9.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).CSharp.targets" />

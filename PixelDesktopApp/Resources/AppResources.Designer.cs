@@ -88,6 +88,78 @@ namespace PixelDesktopApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string DefaultImageName1 {
+            get {
+                return ResourceManager.GetString("DefaultImageName1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to DefaultImageName1.
+        /// </summary>
+        public static string DefaultImageName2 {
+            get {
+                return ResourceManager.GetString("DefaultImageName2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string DefaultImageName3 {
+            get {
+                return ResourceManager.GetString("DefaultImageName3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string DefaultImageName4 {
+            get {
+                return ResourceManager.GetString("DefaultImageName4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string DefaultImageName5 {
+            get {
+                return ResourceManager.GetString("DefaultImageName5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string DefaultImageName6 {
+            get {
+                return ResourceManager.GetString("DefaultImageName6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string DefaultImageName7 {
+            get {
+                return ResourceManager.GetString("DefaultImageName7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string DefaultImageName8 {
+            get {
+                return ResourceManager.GetString("DefaultImageName8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Are you sure?.
         /// </summary>
         public static string ExitConfirmMsg {

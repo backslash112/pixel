@@ -152,4 +152,28 @@
   <data name="Pivot3Title" xml:space="preserve">
     <value>关于</value>
   </data>
+  <data name="DefaultImageName1" xml:space="preserve">
+    <value>红色的心</value>
+  </data>
+  <data name="DefaultImageName2" xml:space="preserve">
+    <value>吃豆人</value>
+  </data>
+  <data name="DefaultImageName3" xml:space="preserve">
+    <value>超级玛丽</value>
+  </data>
+  <data name="DefaultImageName4" xml:space="preserve">
+    <value>小黄人</value>
+  </data>
+  <data name="DefaultImageName5" xml:space="preserve">
+    <value>外星人</value>
+  </data>
+  <data name="DefaultImageName6" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DefaultImageName7" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DefaultImageName8" xml:space="preserve">
+    <value />
+  </data>
 </root>
