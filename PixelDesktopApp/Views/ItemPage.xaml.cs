@@ -39,5 +39,25 @@ namespace PixelDesktopApp.Views
                 DataContext = new ItemViewModel(int.Parse(number));
             }
         }
+
+        public static event Action PreviewHold;
+        public static event Action PreviewUnhold;
+
+
+        private void gridPreview_ManipulationStarted(object sender, System.Windows.Input.ManipulationStartedEventArgs e)
+        {
+            if (PreviewHold != null)
+            {
+                PreviewHold();
+            }
+        }
+
+        private void gridPreview_ManipulationCompleted(object sender, System.Windows.Input.ManipulationCompletedEventArgs e)
+        {
+            if (PreviewUnhold != null)
+            {
+                PreviewUnhold();
+            }
+        }
     }
 }

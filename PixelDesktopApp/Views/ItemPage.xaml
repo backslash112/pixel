@@ -1,4 +1,17 @@
-﻿<phone:PhoneApplicationPage xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone" xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:PixelDesktopApp.Views" xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity" xmlns:ec="clr-namespace:Microsoft.Expression.Interactivity.Core;assembly=Microsoft.Expression.Interactions" x:Class="PixelDesktopApp.Views.ItemPage" SupportedOrientations="Portrait" Orientation="Portrait" mc:Ignorable="d" shell:SystemTray.IsVisible="False">
+﻿<phone:PhoneApplicationPage xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+                            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+                            xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone" 
+                            xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone" 
+                            xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+                            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+                            xmlns:local="clr-namespace:PixelDesktopApp.Views" 
+                            xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity" 
+                            xmlns:ec="clr-namespace:Microsoft.Expression.Interactivity.Core;assembly=Microsoft.Expression.Interactions" 
+                            x:Class="PixelDesktopApp.Views.ItemPage" 
+                            SupportedOrientations="Portrait" 
+                            Orientation="Portrait" 
+                            mc:Ignorable="d" 
+                            shell:SystemTray.IsVisible="False">
     <phone:PhoneApplicationPage.Resources>
 
         <!--ABC-->
@@ -221,7 +234,10 @@
             <TextBlock x:Name="title" Text="{Binding Item.Name}" Foreground="Black" />
 
         </Grid>
-        <Grid Grid.Row="1" Margin="0,-30,24,0">
+        <Grid x:Name="gridPreview" Grid.Row="1" Margin="0,-30,24,0" 
+              ManipulationStarted="gridPreview_ManipulationStarted"
+              ManipulationCompleted="gridPreview_ManipulationCompleted">
+            
             <Image Source="/Images/icon/basecircle.png" HorizontalAlignment="Right" Height="45" />
             <Image Source="/Images/icon/redeyes.png" HorizontalAlignment="Right" Height="45" />
         </Grid>

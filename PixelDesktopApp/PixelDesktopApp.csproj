@@ -135,9 +135,6 @@
     <Compile Include="Views\PinUserControl.xaml.cs">
       <DependentUpon>PinUserControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\TaskListUserControl.xaml.cs">
-      <DependentUpon>TaskListUserControl.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\TiltEffect.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -154,10 +151,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\PinUserControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\TaskListUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
