@@ -88,7 +88,16 @@ namespace PixelDesktopApp.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Do not ask me again.
+        /// </summary>
+        public static string CheckBoxContent {
+            get {
+                return ResourceManager.GetString("CheckBoxContent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hearts.
         /// </summary>
         public static string DefaultImageName1 {
             get {
@@ -97,7 +106,7 @@ namespace PixelDesktopApp.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to DefaultImageName1.
+        ///   Looks up a localized string similar to Pack man.
         /// </summary>
         public static string DefaultImageName2 {
             get {
@@ -106,7 +115,7 @@ namespace PixelDesktopApp.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Mario.
         /// </summary>
         public static string DefaultImageName3 {
             get {
@@ -115,7 +124,7 @@ namespace PixelDesktopApp.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Minion.
         /// </summary>
         public static string DefaultImageName4 {
             get {
@@ -124,7 +133,7 @@ namespace PixelDesktopApp.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Alien.
         /// </summary>
         public static string DefaultImageName5 {
             get {
@@ -133,7 +142,7 @@ namespace PixelDesktopApp.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Mushroom.
         /// </summary>
         public static string DefaultImageName6 {
             get {
@@ -142,7 +151,7 @@ namespace PixelDesktopApp.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Mr. Giraffe.
         /// </summary>
         public static string DefaultImageName7 {
             get {
@@ -151,7 +160,7 @@ namespace PixelDesktopApp.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Color Painting.
         /// </summary>
         public static string DefaultImageName8 {
             get {
@@ -160,7 +169,7 @@ namespace PixelDesktopApp.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 相扑君.
+        ///   Looks up a localized string similar to Mr. Giraffe and his friends.
         /// </summary>
         public static string DefaultImageName9 {
             get {
@@ -183,6 +192,42 @@ namespace PixelDesktopApp.Resources {
         public static string ExitText {
             get {
                 return ResourceManager.GetString("ExitText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Help Spread the Word.
+        /// </summary>
+        public static string MsgBoxCaption {
+            get {
+                return ResourceManager.GetString("MsgBoxCaption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Maybe Later.
+        /// </summary>
+        public static string MsgBoxLeftBtn {
+            get {
+                return ResourceManager.GetString("MsgBoxLeftBtn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to If you like this app, please rate it in the App Store. Thanks!.
+        /// </summary>
+        public static string MsgBoxMsg {
+            get {
+                return ResourceManager.GetString("MsgBoxMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rate It Now.
+        /// </summary>
+        public static string MsgBoxRightBtn {
+            get {
+                return ResourceManager.GetString("MsgBoxRightBtn", resourceCulture);
             }
         }
         
@@ -214,6 +259,24 @@ namespace PixelDesktopApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 请设置为小磁贴.
+        /// </summary>
+        public static string ResizeToSmallText {
+            get {
+                return ResourceManager.GetString("ResizeToSmallText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 请设置为宽磁贴.
+        /// </summary>
+        public static string ResizeToWidthText {
+            get {
+                return ResourceManager.GetString("ResizeToWidthText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to LeftToRight.
         /// </summary>
         public static string ResourceFlowDirection {
@@ -237,6 +300,15 @@ namespace PixelDesktopApp.Resources {
         public static string SampleProperty {
             get {
                 return ResourceManager.GetString("SampleProperty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to update Successfully.
+        /// </summary>
+        public static string UpdateSuccessfullyMsg {
+            get {
+                return ResourceManager.GetString("UpdateSuccessfullyMsg", resourceCulture);
             }
         }
     }

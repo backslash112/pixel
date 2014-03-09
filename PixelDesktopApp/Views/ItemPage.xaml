@@ -26,7 +26,7 @@
                 <Grid Height="Auto"
                       Margin="0,12">
                     <Image Source="{Binding Images[1].url}" />
-                    <local:PinUserControl Image="{Binding Images[1]}"/>
+                    <local:PinUserControl Image="{Binding Images[1]}" />
                 </Grid>
             </StackPanel>
         </DataTemplate>
@@ -37,12 +37,12 @@
                 <Grid Height="Auto">
 
                     <Image Source="{Binding Images[0].url}" />
-                    <local:PinUserControl Image="{Binding Images[0]}"/>
+                    <local:PinUserControl Image="{Binding Images[0]}" />
                 </Grid>
                 <Grid Height="Auto"
                       Margin="0,12">
                     <Image Source="{Binding Images[1].url}" />
-                    <local:PinUserControl Image="{Binding Images[1]}"/>
+                    <local:PinUserControl Image="{Binding Images[1]}" />
                 </Grid>
                 <Grid Height="Auto">
                     <Image Source="{Binding Images[2].url}" />
@@ -124,18 +124,18 @@
                                   Height="99"
                                   Width="99">
                                 <Image Source="{Binding Images[4].url}" />
-                                <local:PinUserControl Image="{Binding Images[4]}"/>
+                                <local:PinUserControl Image="{Binding Images[4]}" />
                             </Grid>
                             <Grid Height="99"
                                   Width="99">
                                 <Image Source="{Binding Images[5].url}" />
-                                <local:PinUserControl Image="{Binding Images[5]}"/>
+                                <local:PinUserControl Image="{Binding Images[5]}" />
                             </Grid>
                             <Grid Height="99"
                                   Width="99"
                                   Margin="12,0,0,0">
                                 <Image Source="{Binding Images[6].url}" />
-                                <local:PinUserControl Image="{Binding Images[6]}"/>
+                                <local:PinUserControl Image="{Binding Images[6]}" />
                             </Grid>
                         </StackPanel>
                     </Grid>
@@ -180,7 +180,7 @@
                     </Grid>
                     <Grid Height="99"
                           Width="99">
-                        <Image Source="{Binding Images[5].url}"  />
+                        <Image Source="{Binding Images[5].url}" />
                         <local:PinUserControl Image="{Binding Images[5]}" />
                     </Grid>
                 </StackPanel>
@@ -278,12 +278,13 @@
               ManipulationStarted="gridPreview_ManipulationStarted"
               ManipulationCompleted="gridPreview_ManipulationCompleted">
 
-            <Image Source="/Images/icon/basecircle.png"
-                   HorizontalAlignment="Right"
-                   Height="45" />
-            <Image Source="/Images/icon/redeyes.png"
-                   HorizontalAlignment="Right"
-                   Height="45" />
+            <Rectangle Fill="{StaticResource PhoneContrastBackgroundBrush}"
+                       HorizontalAlignment="Right" Height="45" Width="45">
+                <Rectangle.OpacityMask>
+                    <ImageBrush ImageSource="/Images/icon/redeyes.png" />
+                </Rectangle.OpacityMask>
+            </Rectangle>
+
         </Grid>
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel"

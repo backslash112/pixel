@@ -171,12 +171,36 @@
     <value>小蘑菇</value>
   </data>
   <data name="DefaultImageName7" xml:space="preserve">
-    <value>鹿尤君</value>
+    <value>色块画+鹿尤君</value>
   </data>
   <data name="DefaultImageName8" xml:space="preserve">
     <value>色块画</value>
   </data>
   <data name="DefaultImageName9" xml:space="preserve">
-    <value>相扑君</value>
+    <value>鹿尤君象扑君</value>
+  </data>
+  <data name="ResizeToSmallText" xml:space="preserve">
+    <value>请设置为小磁贴</value>
+  </data>
+  <data name="ResizeToWidthText" xml:space="preserve">
+    <value>请设置为宽磁贴</value>
+  </data>
+  <data name="UpdateSuccessfullyMsg" xml:space="preserve">
+    <value>更新成功</value>
+  </data>
+  <data name="CheckBoxContent" xml:space="preserve">
+    <value>永不提醒</value>
+  </data>
+  <data name="MsgBoxCaption" xml:space="preserve">
+    <value>帮助宣传</value>
+  </data>
+  <data name="MsgBoxLeftBtn" xml:space="preserve">
+    <value>暂不评价</value>
+  </data>
+  <data name="MsgBoxMsg" xml:space="preserve">
+    <value>如果你喜欢这个程序，请在应用程序商店中评价它。非常感谢！</value>
+  </data>
+  <data name="MsgBoxRightBtn" xml:space="preserve">
+    <value>立刻评价</value>
   </data>
 </root>

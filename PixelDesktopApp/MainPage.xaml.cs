@@ -25,13 +25,18 @@ namespace PixelDesktopApp
             InitializeComponent();
 
             this.PivotDefault.DataContext = new DefaultItemListViewModel();
+
             Loaded += (s, e) =>
             {
                 ItemRepository repository = ItemRepository.Instance;
                 repository.Type = BackgroundHelper.GetBackgroundType();
                 repository.Init();
             };
-        }    
+            
+            MarketplaceReviewServices marketplaceReviewServices = new MarketplaceReviewServices(this);
+            marketplaceReviewServices.RateDays = 5;
+            marketplaceReviewServices.Run();
+        }
 
         protected override void OnBackKeyPress(System.ComponentModel.CancelEventArgs e)
         {
@@ -60,6 +65,21 @@ namespace PixelDesktopApp
             var result = url.Split(new char[] { '/' });
             var number = result[result.Length - 1].Split(new char[] { '.' })[0];
             NavigationService.Navigate(new Uri("/Views/ItemPage.xaml?number=" + number, UriKind.Relative));
+        }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            //首次进入App，跳转到引导页。
+            if ((AppCommon.Instance.Launched == null) || !(bool)AppCommon.Instance.Launched)
+            {
+                AppCommon.Instance.Launched = true;
+                NavigationService.Navigate(new Uri("/Views/IntroducePage.xaml", UriKind.Relative));
+
+            }
+            else
+            {
+                base.OnNavigatedTo(e);
+            }
         }
     }
 }

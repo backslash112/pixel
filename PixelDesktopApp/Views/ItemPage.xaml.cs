@@ -12,6 +12,7 @@ using PixelDesktopApp.Common;
 using System.Windows.Media;
 using System.Diagnostics;
 using PixelDesktopApp.Models;
+using PixelDesktopApp.Resources;
 
 namespace PixelDesktopApp.Views
 {
@@ -38,15 +39,14 @@ namespace PixelDesktopApp.Views
 
         private void PinImage(ImageModel image)
         {
-            ShellTile tile = ShellTile.ActiveTiles.FirstOrDefault(x => x.NavigationUri.ToString().Contains(image.url));
-            if (tile != null && tile.NavigationUri.ToString().Contains(image.id.ToString()))
+            if (FlipTileDataManager.DeskContainsImage(image))
             {
-                MessageBox.Show("successfully update.");
+                MessageBox.Show(AppResources.UpdateSuccessfullyMsg);
             }
             else
             {
                 ShellTileData tileData = FlipTileDataManager.Create(image);
-                ShellTile.Create(new Uri("/MainPage.xaml?imageId=" + image.id, UriKind.Relative), tileData, true);
+                ShellTile.Create(new Uri("/MainPage.xaml?image=" + image.url, UriKind.Relative), tileData, true);
             }
         }
         protected override void OnNavigatedTo(NavigationEventArgs e)

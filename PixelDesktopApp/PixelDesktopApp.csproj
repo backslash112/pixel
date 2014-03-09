@@ -92,12 +92,16 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Common\AppCommon.cs" />
+    <Compile Include="Common\ApplicationSettingsServices.cs" />
+    <Compile Include="Common\ApplicationSettingsStatus.cs" />
     <Compile Include="Common\BackgroundHelper.cs" />
     <Compile Include="Common\BackgroundManager.cs" />
     <Compile Include="Common\FlipTileDataManager.cs" />
     <Compile Include="Common\ImagePart.cs" />
     <Compile Include="Common\ImagePartManager.cs" />
     <Compile Include="Common\ImageUrlServices.cs" />
+    <Compile Include="Common\MarketPlaceServices.cs" />
     <Compile Include="DataAccess\ItemRepository.cs" />
     <Compile Include="Enum\BackgroundType.cs" />
     <Compile Include="Enum\ImagePartType.cs" />
@@ -114,8 +118,10 @@
     <Compile Include="Models\ImageUrl\ImagePartABc4.cs" />
     <Compile Include="Models\ImageUrl\ImagePartABCd4.cs" />
     <Compile Include="Models\ImageUrl\ImagePartSeven.cs" />
+    <Compile Include="Models\IntroduceImage.cs" />
     <Compile Include="Models\Item.cs" />
     <Compile Include="ViewModels\DefaultItemListViewModel.cs" />
+    <Compile Include="ViewModels\IntroducePageViewModel.cs" />
     <Compile Include="ViewModels\ItemListViewModelBase.cs" />
     <Compile Include="ViewModels\ItemViewModel.cs" />
     <Compile Include="ViewModels\RelayCommand.cs" />
@@ -130,6 +136,9 @@
       <DependentUpon>AppResources.resx</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="Views\IntroducePage.xaml.cs">
+      <DependentUpon>IntroducePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\ItemPage.xaml.cs">
       <DependentUpon>ItemPage.xaml</DependentUpon>
     </Compile>
@@ -144,6 +153,10 @@
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
     <Page Include="MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\IntroducePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -162,8 +175,12 @@
     <Content Include="Data\darkImages.xml" />
     <Content Include="Data\items.xml" />
     <Content Include="Images\icon\basecircle.png" />
-    <Content Include="Images\icon\redeyes.png" />
     <Content Include="Images\icon\pin.png" />
+    <Content Include="Images\icon\redeyes.png" />
+    <Content Include="Images\introduce\1.png" />
+    <Content Include="Images\introduce\2.png" />
+    <Content Include="Images\introduce\3.png" />
+    <Content Include="Images\introduce\4.png" />
     <Content Include="Images\part\dark\81.png" />
     <Content Include="Images\part\dark\82.png" />
     <Content Include="Images\part\dark\83.png" />
@@ -178,8 +195,11 @@
     <Content Include="Images\part\light\96.png" />
     <Content Include="Images\part\light\97.png" />
     <Content Include="Images\part\light\98.png" />
+    <Content Include="Images\resizeToSmall.png" />
+    <Content Include="Images\resizeToWidth.png" />
     <Content Include="Images\thumbnail\Dark\9.png" />
     <Content Include="Images\thumbnail\Dark\8.png" />
+    <Content Include="Libs\Microsoft.Phone.Controls.dll" />
     <Content Include="Libs\Microsoft.Phone.Controls.Toolkit.dll" />
     <None Include="Properties\AppManifest.xml" />
     <None Include="Properties\WMAppManifest.xml">
@@ -291,6 +311,7 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Expression.Interactions, Version=3.9.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Phone.Controls, Version=8.0.0.0, Culture=neutral, PublicKeyToken=24eec0d8c86cda1e, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.Phone.Controls.Toolkit, Version=8.0.1.0, Culture=neutral, PublicKeyToken=b772ad94eb9ca604, processorArchitecture=MSIL" />
     <Reference Include="System.Windows.Interactivity, Version=3.9.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
   </ItemGroup>
