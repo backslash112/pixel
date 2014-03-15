@@ -13,7 +13,7 @@ namespace PixelDesktopApp.ViewModels
     {
         protected override ObservableCollection<string> LoadThumbnail()
         {
-            ImageUrlServices services = new ImageUrlServices();
+            ImageForBackgroundServices services = new ImageForBackgroundServices();
             return new ObservableCollection<string>(services.ThumbnailList);
         }
     }

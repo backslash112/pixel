@@ -1,0 +1,67 @@
+﻿<phone:PhoneApplicationPage xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                            xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+                            xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+                            xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                            xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+                            xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+                            xmlns:ec="clr-namespace:Microsoft.Expression.Interactivity.Core;assembly=Microsoft.Expression.Interactions"
+                            x:Class="PixelDesktopApp.Views.IntroducePage"
+                            FontFamily="{StaticResource PhoneFontFamilyNormal}"
+                            FontSize="{StaticResource PhoneFontSizeNormal}"
+                            Foreground="{StaticResource PhoneForegroundBrush}"
+                            SupportedOrientations="Portrait"
+                            Orientation="Portrait"
+                            mc:Ignorable="d"
+                            shell:SystemTray.IsVisible="False"
+                            x:Name="root">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot"
+          Background="Transparent">
+
+        <toolkit:FlipView x:Name="flipView"
+                          ItemsSource="{Binding Images}">
+            <toolkit:FlipView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+
+                        <i:Interaction.Triggers>
+                            <ec:DataTrigger Binding="{Binding Id}"
+                                            Value="{Binding DataContext.Images.Count, ElementName=root}">
+                                <ec:ChangePropertyAction TargetObject="{Binding ElementName=startButton}"
+                                                         PropertyName="Visibility">
+                                    <ec:ChangePropertyAction.Value>
+                                        <Visibility>Visible</Visibility>
+                                    </ec:ChangePropertyAction.Value>
+                                </ec:ChangePropertyAction>
+                            </ec:DataTrigger>
+                        </i:Interaction.Triggers>
+
+                        <Image Source="{Binding Url}" />
+                        <StackPanel HorizontalAlignment="Center"
+                                    VerticalAlignment="Bottom"
+                                    Orientation="Horizontal"
+                                    Margin="10">
+                            <TextBlock Text="{Binding Id}" />
+                            <TextBlock Text="/" />
+                            <TextBlock Text="{Binding DataContext.Images.Count, ElementName=root}" />
+                        </StackPanel>
+                        <Button x:Name="startButton"
+                                Height="72"
+                                Content="{Binding LocalizedResources.Start,  Mode=OneWay, Source={StaticResource LocalizedStrings}}"
+                                VerticalAlignment="Bottom"
+                                Margin="20,0,20,80"
+                                Visibility="Collapsed"
+                                Click="startButton_Click"
+                                Foreground="White"
+                                BorderBrush="White" />
+
+                    </Grid>
+                </DataTemplate>
+            </toolkit:FlipView.ItemTemplate>
+        </toolkit:FlipView>
+    </Grid>
+
+</phone:PhoneApplicationPage>

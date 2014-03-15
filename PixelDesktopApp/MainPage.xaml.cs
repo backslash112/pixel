@@ -69,6 +69,7 @@ namespace PixelDesktopApp
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
+           
             //首次进入App，跳转到引导页。
             if ((AppCommon.Instance.Launched == null) || !(bool)AppCommon.Instance.Launched)
             {

@@ -179,14 +179,8 @@
   <data name="DefaultImageName9" xml:space="preserve">
     <value>鹿尤君象扑君</value>
   </data>
-  <data name="ResizeToSmallText" xml:space="preserve">
-    <value>请设置为小磁贴</value>
-  </data>
-  <data name="ResizeToWidthText" xml:space="preserve">
-    <value>请设置为宽磁贴</value>
-  </data>
   <data name="UpdateSuccessfullyMsg" xml:space="preserve">
-    <value>更新成功</value>
+    <value>更新成功！</value>
   </data>
   <data name="CheckBoxContent" xml:space="preserve">
     <value>永不提醒</value>
@@ -202,5 +196,11 @@
   </data>
   <data name="MsgBoxRightBtn" xml:space="preserve">
     <value>立刻评价</value>
+  </data>
+  <data name="Start" xml:space="preserve">
+    <value>立即使用</value>
+  </data>
+  <data name="Alert" xml:space="preserve">
+    <value>提示</value>
   </data>
 </root>

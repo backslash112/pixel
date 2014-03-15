@@ -179,14 +179,8 @@
   <data name="DefaultImageName9" xml:space="preserve">
     <value>Mr. Giraffe and his friends</value>
   </data>
-  <data name="ResizeToSmallText" xml:space="preserve">
-    <value>请设置为小磁贴</value>
-  </data>
-  <data name="ResizeToWidthText" xml:space="preserve">
-    <value>请设置为宽磁贴</value>
-  </data>
   <data name="UpdateSuccessfullyMsg" xml:space="preserve">
-    <value>update Successfully</value>
+    <value>update Successfully!</value>
   </data>
   <data name="CheckBoxContent" xml:space="preserve">
     <value>Do not ask me again</value>
@@ -202,5 +196,11 @@
   </data>
   <data name="MsgBoxRightBtn" xml:space="preserve">
     <value>Rate It Now</value>
+  </data>
+  <data name="Start" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="Alert" xml:space="preserve">
+    <value>Alert</value>
   </data>
 </root>

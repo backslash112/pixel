@@ -18,10 +18,12 @@ namespace PixelDesktopApp.Views
 {
     public partial class ItemPage : PhoneApplicationPage
     {
+        FlipTileDataManager flipTileDataManager;
         public ItemPage()
         {
             InitializeComponent();
 
+            flipTileDataManager = new FlipTileDataManager();
 
             if (BackgroundHelper.GetBackgroundType() == BackgroundType.Dark)
             {
@@ -39,13 +41,14 @@ namespace PixelDesktopApp.Views
 
         private void PinImage(ImageModel image)
         {
-            if (FlipTileDataManager.DeskContainsImage(image))
+            if (flipTileDataManager.DeskContainsImage(image))
             {
-                MessageBox.Show(AppResources.UpdateSuccessfullyMsg);
+                flipTileDataManager.Update(image);
+                MessageBox.Show(AppResources.UpdateSuccessfullyMsg,AppResources.Alert,MessageBoxButton.OK);
             }
             else
             {
-                ShellTileData tileData = FlipTileDataManager.Create(image);
+                ShellTileData tileData = flipTileDataManager.Create(image);
                 ShellTile.Create(new Uri("/MainPage.xaml?image=" + image.url, UriKind.Relative), tileData, true);
             }
         }

@@ -61,6 +61,15 @@ namespace PixelDesktopApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Alert.
+        /// </summary>
+        public static string Alert {
+            get {
+                return ResourceManager.GetString("Alert", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to add.
         /// </summary>
         public static string AppBarButtonText {
@@ -259,24 +268,6 @@ namespace PixelDesktopApp.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 请设置为小磁贴.
-        /// </summary>
-        public static string ResizeToSmallText {
-            get {
-                return ResourceManager.GetString("ResizeToSmallText", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to 请设置为宽磁贴.
-        /// </summary>
-        public static string ResizeToWidthText {
-            get {
-                return ResourceManager.GetString("ResizeToWidthText", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to LeftToRight.
         /// </summary>
         public static string ResourceFlowDirection {
@@ -304,7 +295,16 @@ namespace PixelDesktopApp.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to update Successfully.
+        ///   Looks up a localized string similar to Start.
+        /// </summary>
+        public static string Start {
+            get {
+                return ResourceManager.GetString("Start", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to update Successfully!.
         /// </summary>
         public static string UpdateSuccessfullyMsg {
             get {

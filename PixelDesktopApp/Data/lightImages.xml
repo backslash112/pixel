@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<images>
+  <image id="11" size="Width" number="1" url="/Images/part/light/11.png" />
+  <image id="12" size="Width" number="1" url="/Images/part/light/12.png" />
+  <image id="13" size="Width" number="1" url="/Images/part/light/13.png" />
+  <image id="21" size="Width" number="2" url="/Images/part/light/21.png" />
+  <image id="22" size="Width" number="2" url="/Images/part/light/22.png" />
+  <image id="231" size="Small" number="2" url="/Images/part/light/231.png" />
+  <image id="232" size="Small" number="2" url="/Images/part/light/232.png" />
+  <image id="233" size="Small" number="2" url="/Images/part/light/233.png" />
+  <image id="234" size="Small" number="2" url="/Images/part/light/234.png" />
+  <image id="31" size="Width" number="3" url="/Images/part/light/31.png" />
+  <image id="32" size="Width" number="3" url="/Images/part/light/32.png" />
+  <image id="33" size="Width" number="3" url="/Images/part/light/33.png" />
+  <image id="41" size="Width" number="4" url="/Images/part/light/41.png" />
+  <image id="42" size="Width" number="4" url="/Images/part/light/42.png" />
+  <image id="43" size="Width" number="4" url="/Images/part/light/43.png" />
+  <image id="441" size="Small" number="4" url="/Images/part/light/441.png" />
+  <image id="442" size="Small" number="4" url="/Images/part/light/442.png" />
+  <image id="443" size="Small" number="4" url="/Images/part/light/443.png" />
+  <image id="444" size="Small" number="4" url="/Images/part/light/444.png" />
+  <image id="51" size="Width" number="5" url="/Images/part/light/51.png" />
+  <image id="521" size="Small" number="5" url="/Images/part/light/521.png" />
+  <image id="522" size="Small" number="5" url="/Images/part/light/522.png" />
+  <image id="523" size="Small" number="5" url="/Images/part/light/523.png" />
+  <image id="524" size="Small" number="5" url="/Images/part/light/524.png" />
+  <image id="61" size="Width" number="6" url="/Images/part/light/61.png" />
+  <image id="62" size="Width" number="6" url="/Images/part/light/62.png" />
+  <image id="63" size="Width" number="6" url="/Images/part/light/63.png" />
+  <image id="71" size="Width" number="7" url="/Images/part/light/71.png" />
+  <image id="72" size="Width" number="7" url="/Images/part/light/72.png" />
+  <image id="73" size="Width" number="7" url="/Images/part/light/73.png" />  
+</images>
